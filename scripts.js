@@ -1,10 +1,12 @@
 let Gameboard = (function () {
     const grid = document.getElementById('grid-container');
-    let gameboardArray = ['x', 'o', 'x', 'o', 'x', 'o', 'x', 'o', 'x']
+    const gameboardArray = []
+
+    function saveElementToArray(){
+        
+    }
     function renderTheGameboard() {
         gameboardArray.forEach(function (element) {
-            let gridItem = document.createElement('div');
-            gridItem.classList.add('grid-item');
             gridItem.textContent = element;
             grid.appendChild(gridItem);
         })
@@ -13,4 +15,10 @@ let Gameboard = (function () {
     return {renderTheGameboard};
 })();
 
-Gameboard.renderTheGameboard();
+const grid = document.getElementById('grid-container');
+grid.addEventListener('click', function(e){
+    console.log(e.target);
+    e.target.textContent = 'X';
+
+
+})
