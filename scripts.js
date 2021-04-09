@@ -6,11 +6,10 @@ const Gameboard = (function () {
 
     gridArray.forEach(function (box) {
         box.addEventListener('click', function () {
-            renderTheGameboard(Player1,Player2, box)
+            renderTheGameboard(Player1, Player2, box);
         })
     });
 
-   
     function activePlayer(Player1, Player2) {
         if (gameboardArray[gameboardArray.length - 1] === 'O' || gameboardArray[0] === undefined) {
             return Player1;
@@ -20,9 +19,10 @@ const Gameboard = (function () {
     }
 
     function checkArrayAndClearGrid() {
-        if(gameboardArray.length == 9){
+        if (gameboardArray.length == 9) {
             console.log('It is a tie!');
         }
+
     }
 
     function renderTheGameboard(Player1, Player2, target) {
