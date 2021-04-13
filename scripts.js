@@ -18,10 +18,37 @@ const Gameboard = (function () {
         }
     }
 
-    function checkArrayAndClearGrid() {
-        if (gameboardArray.length == 9) {
+    function checkRows() {
+        for (let i = 0; i < 9; i = i + 3) {
+            if (gridArray[i].textContent == gridArray[i + 1].textContent == gridArray[i + 2].textContent && gridArray[i].textContent != '' ) {
+                return true;
+            }
+        }
+
+        console.log('For fucks me up')
+    }
+
+    function checkColumns() {
+        // for (let i = 0; i < 9; i = i + 1) {
+        //     if (gridArray[i].textContent == gridArray[i + 3].textContent == gridArray[i + 6].textContent && gridArray[i].textContent, gridArray[i + 3].textContent, gridArray[i + 6].textContent != '') {
+        //         return true;
+        //     }
+        // }
+    }
+
+    function checkDiagonals() {
+        return false;
+    }
+
+    function checkGrid(currentPlayer) {
+        if (checkRows() == true || checkColumns() == true || checkDiagonals() == true) {
+            alert(`${currentPlayer.name} wins the game! Congratulations!`);
+        }
+        else if (gameboardArray.length == 9) {
             console.log('It is a tie!');
         }
+
+
 
     }
 
@@ -34,8 +61,7 @@ const Gameboard = (function () {
             target.textContent = currentPlayer.symbol;
 
             //check if game is over
-            checkArrayAndClearGrid();
-            //console.log(gameboardArray)
+            checkGrid(currentPlayer);
         }
 
         else if (target.textContent != '') {
