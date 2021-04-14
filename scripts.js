@@ -37,7 +37,12 @@ const Gameboard = (function () {
     }
 
     function checkDiagonals() {
-        return false;
+        if (gridArray[0].textContent == gridArray[0 + 4].textContent && gridArray[0].textContent == gridArray[0 + 8].textContent && gridArray[0].textContent != '') {
+            return true;
+        }
+        else if (gridArray[2].textContent == gridArray[2 + 2].textContent && gridArray[2].textContent == gridArray[2 + 4].textContent && gridArray[2].textContent != '') {
+            return true;
+        }
     }
 
     function checkGrid(currentPlayer) {
