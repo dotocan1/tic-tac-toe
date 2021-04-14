@@ -20,7 +20,7 @@ const Gameboard = (function () {
 
     function checkRows() {
         for (let i = 0; i < 9; i = i + 3) {
-            if (gridArray[i].textContent == gridArray[i + 1].textContent == gridArray[i + 2].textContent && gridArray[i].textContent != '' ) {
+            if (gridArray[i].textContent == gridArray[i + 1].textContent && gridArray[i].textContent == gridArray[i+2].textContent && gridArray[i].textContent != '') {
                 return true;
             }
         }
