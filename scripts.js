@@ -20,7 +20,7 @@ const Gameboard = (function () {
 
     function checkRows() {
         for (let i = 0; i < 9; i = i + 3) {
-            if (gridArray[i].textContent == gridArray[i + 1].textContent && gridArray[i].textContent == gridArray[i+2].textContent && gridArray[i].textContent != '') {
+            if (gridArray[i].textContent == gridArray[i + 1].textContent && gridArray[i].textContent == gridArray[i + 2].textContent && gridArray[i].textContent != '') {
                 return true;
             }
         }
@@ -29,11 +29,11 @@ const Gameboard = (function () {
     }
 
     function checkColumns() {
-        // for (let i = 0; i < 9; i = i + 1) {
-        //     if (gridArray[i].textContent == gridArray[i + 3].textContent == gridArray[i + 6].textContent && gridArray[i].textContent, gridArray[i + 3].textContent, gridArray[i + 6].textContent != '') {
-        //         return true;
-        //     }
-        // }
+        for (let i = 0; i < 3; i = i + 1) {
+            if (gridArray[i].textContent == gridArray[i + 3].textContent && gridArray[i].textContent == gridArray[i + 6].textContent && gridArray[i].textContent != '') {
+                return true;
+            }
+        }
     }
 
     function checkDiagonals() {
